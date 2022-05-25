@@ -18,11 +18,11 @@ dataftr = feather.read_dataframe('problem-2.ftr')
 #SINCE ORIGINAL DATA IS NOT A DATETIME FORMAT, IT MUST CONVERT WITH THIS FUNCTION
 #THIS FUNC WILL TAKE THE ORIGINAL DATA AND CONVERT IT BY USING to_datetime FUNC FROM pandas
 #ERRORS WILL BE IGNORED SINCE NOT ALL DATA (ROWS) IS IN THE SAME FORMAT
-def convertToDateTıme(originalData):
+def convertToDateTime(originalData):
     date_time = pd.to_datetime(originalData, format='%d-%m-%Y', errors='ignore')
     return date_time
 
-datapd.Aangebodensinds = datapd.Aangebodensinds.apply(convertToDateTıme)
+datapd.Aangebodensinds = datapd.Aangebodensinds.apply(convertToDateTime)
 
 #JUST WANTED TO CHECK IF CONVERSION  IS SUCCESSFULL
 mystr = datapd.iloc[0, 0]
